@@ -16,15 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".AudioRecordTest">
-
-
+        <activity android:name=".AudioRecordTest" >
+        </activity>
+        <activity android:name=".filelist">
         </activity>
 
         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-         <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
+        <uses-permission android:name="android.permission.RECORD_AUDIO" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
 
     </application>
 
