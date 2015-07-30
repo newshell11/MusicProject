@@ -22,7 +22,9 @@ import android.content.Context;
 import android.util.Log;
 import android.media.MediaRecorder;
 import android.media.MediaPlayer;
+import android.widget.Toast;
 
+import java.io.File;
 import java.io.IOException;
 
 
@@ -137,8 +139,15 @@ public class AudioRecordTest extends Activity
 
     public AudioRecordTest() {
         mFileName = Environment.getExternalStorageDirectory().getAbsolutePath();
-        mFileName += "/audiorecordtest.3gp";
+
+        mFileName += "audiorecordtest.mp4";
+
     }
+
+
+
+
+
 
     @Override
     public void onCreate(Bundle icicle) {
