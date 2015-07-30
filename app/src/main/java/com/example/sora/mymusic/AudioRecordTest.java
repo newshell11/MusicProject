@@ -35,7 +35,7 @@ public class AudioRecordTest extends Activity
 
     private RecordButton mRecordButton = null;
     private MediaRecorder mRecorder = null;
-
+;
     private PlayButton   mPlayButton = null;
     private MediaPlayer   mPlayer = null;
 
@@ -138,9 +138,23 @@ public class AudioRecordTest extends Activity
     }
 
     public AudioRecordTest() {
-        mFileName = Environment.getExternalStorageDirectory().getAbsolutePath();
+     //   mFileName = Environment.getExternalStorageDirectory().getPath();
+    //    mFileName += "audiorecordtest.mp4";
 
-        mFileName += "audiorecordtest.mp4";
+
+        String str = Environment.getExternalStorageState();
+        if ( str.equals(Environment.MEDIA_MOUNTED)) {
+
+            String dirPath = "/sdcard/android/data/pe.berabue.sdtest/temp";
+            File file = new File(dirPath);
+            if( !file.exists() )  // 원하는 경로에 폴더가 있는지 확인
+                file.mkdirs();
+        }
+        else
+            Toast.makeText(AudioRecordTest.this, "SD Card 인식 실패", Toast.LENGTH_SHORT).show();
+
+         mFileName = Environment.getExternalStorageDirectory().getPath();
+         mFileName += "audiorecordtest.mp4";
 
     }
 
